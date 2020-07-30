@@ -13,16 +13,43 @@
             <input type="text" id="textName" value="平安" />
             <input type="text" id="textType" value="经" />
             <span>》生成器</span>
+            <a
+                id="githubLink"
+                target="_blank"
+                href="https://github.com/aa11653/pinganjing"
+                >github</a
+            >
         </h1>
+        <div id="titlePlaceholder"></div>
         <div id="dataSelector">
-            <h2>选择数据</h2>
+            <span id="selectHeader">选择数据</span>
+            <button id="addDataButton">+</button>
+            <br />
+            <div id="addDataMenu">
+                名称：
+                <input
+                    type="text"
+                    id="newDataName"
+                    placeholder="新数据集的名称"
+                />
+                <br />
+                <span id="dataContentCaption">内容：</span>
+                <textarea
+                    id="newDataContent"
+                    placeholder="数据内容：用逗号、顿号、分号、换行、斜杠、反斜杠或空格分割。例如：1岁，2岁，3岁"
+                ></textarea>
+                <br />
+                <button class="addNewDataBtn" id="confirmAdd">确定</button>
+                <button class="addNewDataBtn" id="cancelAdd">取消</button>
+            </div>
+            <br />
             <div id="dataContainer"></div>
         </div>
         <div id="generate">
             <button id="generatebutton">编写</button>
         </div>
         <div id="generatedContent">
-            <button id="downloadHTML">下载 Html</button>
+            <button id="downloadHTML">下载 HTML</button>
             <button id="downloadMarkdown">下载 Markdowm</button>
             <br />
             <iframe id="generatedContentDisplay" frameborder="0"></iframe>

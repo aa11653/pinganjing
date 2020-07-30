@@ -13,7 +13,7 @@ const dataUtils = {
         return arr
     }
 }
-const data = [
+const insetData = [
     {
         title: "年龄",
         data: ["出生", ...dataUtils.createSequence(1, 100).map(s => s + "岁"), "100岁以上"]
@@ -129,7 +129,22 @@ const data = [
         data: [..."耳眉眼鼻口"]
     },
     {
-        title: "近100年",
+        title: "过去100年",
         data: dataUtils.createSequence(new Date().getFullYear() - 99, new Date().getFullYear()).map(s => s + "年")
+    },
+    {
+        title: "未来100年",
+        data: dataUtils.createSequence(new Date().getFullYear(), new Date().getFullYear() + 99).map(s => s + "年")
+    },
+    {
+        title: "日期",
+        data: (function () {
+            const dayInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+            const arr = dayInMonths.map(
+                (dayInMonth, m) => dataUtils.createSequence(1, 31)
+                    .map(d => `${m + 1}月${d}日`)
+            ).flat(1)
+            return arr
+        })()
     }
 ]

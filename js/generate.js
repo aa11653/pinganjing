@@ -9,6 +9,7 @@ function generateHTML(dataSets, textName, bookType) {
     const $root = document.createElement("div");
     const $bookTitle = document.createElement("h1")
     $bookTitle.innerHTML = textName + bookType
+    $root.appendChild($bookTitle)
     dataSets.forEach(n => {
         const $h = document.createElement("h2")
         $h.innerHTML = n.title + textName
